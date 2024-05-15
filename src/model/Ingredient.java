@@ -1,28 +1,52 @@
 package model;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 import java.util.Date;
-/**
- *
- * @author imkir
- */
+import java.util.List;
+
+
 public class Ingredient {
-    private final int id = 0;
+ 
+
+
+    private static int lastId = 0;
+    private int id;
     private final String name;
     private final Date expiryDate;
-
-    public Ingredient(int id, String name, Date expiryDate) {
-        //this.id = id;
+    private String category;
+     
+    
+    
+    public Ingredient(int id, String name, Date expiryDate, String category) {
+        this.id = ++lastId;
         this.name = name;
         this.expiryDate = expiryDate;
+        this.category = category;
+       
     }
-    public Ingredient(String name, Date expiryDate){
-         this.name = name;
-        this.expiryDate = expiryDate;
+ // Constructor with only name parameter (overloaded)
+    public Ingredient(String name) {
+        this.id = ++lastId;
+        this.name = name;
+        this.expiryDate = null; // Set default expiryDate to null
+        this.category = ""; // Set default category to an empty string
+    }
+    
+    // Constructor with name and category parameters
+    public Ingredient(String name, String category) {
+        this.id = ++lastId;
+        this.name = name;
+        this.expiryDate = null; // Set default expiryDate to null
+        this.category = category;
+    }
+    
+
+    // Getters and setters for id, name, expiryDate, category
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -37,14 +61,33 @@ public class Ingredient {
         return expiryDate;
     }
 
+    // Getters and setters for allergens and dietaryRestrictions through IngredientDetails
+
+  
+    //public List<String> getDietaryRestrictions() {
+      //  return details.getDietaryRestrictions();
+    //}
+
+    //ublic void setDietaryRestrictions(List<String> dietaryRestrictions) {
+       // details.setDietaryRestrictions(dietaryRestrictions);
+//    }
+
     @Override
     public String toString() {
         return "Ingredient{" +
-               "id=" + id +
-               ", name='" + name + '\'' +
-               ", expiryDate=" + expiryDate +
-               '}';
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", expiryDate=" + expiryDate +
+                ", category='" + category + '\'' +
+                
+                
+                '}';
     }
 
-   
 }
+
+    
+
+
+    
+
