@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-/**
- *
- * @author imkir
- */
- import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
-import model.Ingredient;
-   
+
 public class SavouryIngredient extends IngredientCategory {
+
     @Override
     public List<Ingredient> getAllIngredients() {
         List<Ingredient> savouryIngredients = new ArrayList<>();
@@ -24,27 +16,58 @@ public class SavouryIngredient extends IngredientCategory {
         return savouryIngredients;
     }
 
-    // Additional methods specific to savoury ingredients
+    // Sample dishes for the savoury category
+    public static final List<Dish> SAVOURY_DISHES = new ArrayList<>();
 
-    public void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    static {
+        // Ingredients for Spaghetti Bolognese dish
+        List<String> spaghettiBologneseIngredients = new ArrayList<>();
+        spaghettiBologneseIngredients.add("ground beef");
+        spaghettiBologneseIngredients.add("tomato sauce");
+        spaghettiBologneseIngredients.add("onion");
+        spaghettiBologneseIngredients.add("garlic");
+        spaghettiBologneseIngredients.add("spaghetti");
+
+        // Ingredients for Halloumi Salad dish
+        List<String> halloumiSaladIngredients = new ArrayList<>();
+        halloumiSaladIngredients.add("avocado");
+        halloumiSaladIngredients.add("halloumi");
+        halloumiSaladIngredients.add("mint");
+        halloumiSaladIngredients.add("cucumbers");
+        halloumiSaladIngredients.add("bell peppers");
+
+        // Add dishes to the list
+        SAVOURY_DISHES.add(new Dish("Spaghetti Bolognese", spaghettiBologneseIngredients));
+        SAVOURY_DISHES.add(new Dish("Halloumi Salad", halloumiSaladIngredients));
     }
-    public static final Ingredient[] spaghettiBologneseIngredients = {
-    new Ingredient("Ground Beef", "Protein"),
-    new Ingredient("Tomato Sauce", "Sauce"),
-    new Ingredient("Onion", "Vegetable"),
-    new Ingredient("Garlic", "Vegetable"),
-    new Ingredient("Spaghetti", "Pasta")
-};
 
-public static final Ingredient[] vegetableStirFryIngredients = {
-    new Ingredient("Broccoli", "Vegetable"),
-    new Ingredient("Carrot", "Vegetable"),
-    new Ingredient("Bell Pepper", "Vegetable"),
-    new Ingredient("Soy Sauce", "Sauce"),
-    new Ingredient("Tofu", "Protein")
-};
+    public static Ingredient[] getSpaghettiBologneseIngredients() {
+        List<String> spaghettiBologneseIngredients = new ArrayList<>();
+        spaghettiBologneseIngredients.add("ground beef");
+        spaghettiBologneseIngredients.add("tomato sauce");
+        spaghettiBologneseIngredients.add("onion");
+        spaghettiBologneseIngredients.add("garlic");
+        spaghettiBologneseIngredients.add("spaghetti");
 
+        Ingredient[] ingredientsArray = new Ingredient[spaghettiBologneseIngredients.size()];
+        for (int i = 0; i < spaghettiBologneseIngredients.size(); i++) {
+            ingredientsArray[i] = new Ingredient(spaghettiBologneseIngredients.get(i), "Savoury");
+        }
+        return ingredientsArray;
+    }
+
+    public static Ingredient[] getHalloumiSaladIngredients() {
+        List<String> halloumiSaladIngredients = new ArrayList<>();
+        halloumiSaladIngredients.add("avocado");
+        halloumiSaladIngredients.add("halloumi");
+        halloumiSaladIngredients.add("mint");
+        halloumiSaladIngredients.add("cucumbers");
+        halloumiSaladIngredients.add("bell peppers");
+
+        Ingredient[] ingredientsArray = new Ingredient[halloumiSaladIngredients.size()];
+        for (int i = 0; i < halloumiSaladIngredients.size(); i++) {
+            ingredientsArray[i] = new Ingredient(halloumiSaladIngredients.get(i), "Savoury");
+        }
+        return ingredientsArray;
+    }
 }
-
-

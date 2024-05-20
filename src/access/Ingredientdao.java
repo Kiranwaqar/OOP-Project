@@ -57,15 +57,15 @@ public class Ingredientdao {
         return ingredients;
     }
     // Categorize ingredients
-    private static void categorizeIngredients(List<Ingredient> ingredients) {
-        for (Ingredient ingredient : ingredients) {
+   private static void categorizeIngredients(List<Ingredient> ingredients) {
+       for (Ingredient ingredient : ingredients) {
             String category = ingredient.getCategory();
             if (!categorizedIngredients.containsKey(category)) {
                 categorizedIngredients.put(category, new ArrayList<>());
-            }
+           }
             categorizedIngredients.get(category).add(ingredient);
         }
-    }
+   }
 public static List<Ingredient> getAllIngredients() {
         // Fetch ingredients from the database
         List<Ingredient> ingredients = fetchIngredientsFromDatabase();

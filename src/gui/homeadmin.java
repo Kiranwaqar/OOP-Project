@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package gui;
-
+import model.ExpiryDateCellRenderer;
 import model.FoodInventorySystem;
 import access.Ingredientdao;
 import model.Ingredient;
@@ -17,6 +17,7 @@ import java.util.jar.Attributes.Name;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTable;
+import javax.swing.table.TableColumn;
 
 /**
  *
@@ -31,9 +32,15 @@ private Ingredientdao ingredientDao = new Ingredientdao();
      */
     public homeadmin() {
         initComponents();
+        setupTable();
 //updateTable();
 
     }
+     private void setupTable() {
+        TableColumn expiryColumn = ingtable.getColumnModel().getColumn(2); // Assuming expiry date is in column 2
+        expiryColumn.setCellRenderer(new ExpiryDateCellRenderer());
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,6 +66,8 @@ private Ingredientdao ingredientDao = new Ingredientdao();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         ingcategory = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -66,6 +75,7 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 formComponentShown(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -81,6 +91,9 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 "ID", "Name", "Expiry Date", "Category"
             }
         ));
+        ingtable.setShowGrid(false);
+        ingtable.setShowHorizontalLines(true);
+        ingtable.setShowVerticalLines(true);
         ingtable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ingtableMouseClicked(evt);
@@ -95,21 +108,27 @@ private Ingredientdao ingredientDao = new Ingredientdao();
 
         jScrollPane3.setViewportView(jScrollPane2);
 
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 248, 510, 390));
+
         jLabel1.setText("Name");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 350, -1, -1));
 
         jLabel2.setText("Expiry Date");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 420, -1, -1));
 
         ingname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingnameActionPerformed(evt);
             }
         });
+        getContentPane().add(ingname, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, 326, -1));
 
         ingexpiry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ingexpiryActionPerformed(evt);
             }
         });
+        getContentPane().add(ingexpiry, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, 326, -1));
 
         addbtn.setText("Add");
         addbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +136,7 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 addbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 500, -1, -1));
 
         updatebtn.setText("Update");
         updatebtn.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +144,7 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 updatebtnActionPerformed(evt);
             }
         });
+        getContentPane().add(updatebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 500, -1, -1));
 
         delbtn.setText("Delete");
         delbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +152,7 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 delbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(delbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 500, -1, -1));
 
         clearbtn.setText("Clear");
         clearbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -138,8 +160,10 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 clearbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(clearbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 500, -1, -1));
 
         jLabel3.setText("Ingredient Added Successfully!!");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 560, -1, -1));
 
         jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -147,8 +171,10 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 550, -1, -1));
 
         jLabel4.setText("Category");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 280, -1, -1));
 
         ingcategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Category", "Spicy", "Sweet", "Savoury", " " }));
         ingcategory.addActionListener(new java.awt.event.ActionListener() {
@@ -156,68 +182,15 @@ private Ingredientdao ingredientDao = new Ingredientdao();
                 ingcategoryActionPerformed(evt);
             }
         });
+        getContentPane().add(ingcategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, 326, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(144, 144, 144)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ingcategory, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ingname, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ingexpiry, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(addbtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(updatebtn)
-                                .addGap(30, 30, 30)
-                                .addComponent(delbtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                                .addComponent(clearbtn)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
-                .addContainerGap(430, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(ingcategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(ingname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(ingexpiry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addbtn)
-                            .addComponent(updatebtn)
-                            .addComponent(delbtn)
-                            .addComponent(clearbtn)
-                            .addComponent(jButton1))
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel3)
-                        .addGap(301, 301, 301))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(180, 180, 180))))
-        );
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel5.setText("items highlighted in red are near expiry ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background restaurant .png"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -20, 1350, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -268,25 +241,24 @@ private Ingredientdao ingredientDao = new Ingredientdao();
 
     private void addbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbtnActionPerformed
       // TODO add your handling code here: 
-     String name = ingname.getText();
-        String dateString = ingexpiry.getText();
-        String category = ingcategory.getSelectedItem().toString();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        
-        try {
-            Date date = dateFormat.parse(dateString);
-            boolean result = ingredientDao.addIngredient(new Ingredient(0, name, date, category));
-            if (result) {
-                jLabel3.setText("Ingredient Added Successfully!!");
-                updateTable();
-            } else {
-                jLabel3.setText("Failed to add ingredient.");
-            }
-        } catch (ParseException e) {
-            jLabel3.setText("Please enter a valid expiry date.");
-        }
-    
-
+    String name = ingname.getText();
+    String dateString = ingexpiry.getText();
+    String category = ingcategory.getSelectedItem().toString(); 
+    if (name.isEmpty() || dateString.isEmpty() || category.isEmpty()) {// Check if any fields are empty
+        jLabel3.setText("Please fill all the fields.");
+        return;  // Stop further processing
+    }
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    try {
+        Date date = dateFormat.parse(dateString);
+        boolean result = ingredientDao.addIngredient(new Ingredient(0, name, date, category));
+        if (result) {
+            jLabel3.setText("Ingredient Added Successfully!!");
+            updateTable();
+        } else {
+            jLabel3.setText("Failed to add ingredient.");}
+    } catch (ParseException e) {
+        jLabel3.setText("Please enter a valid expiry date."); }
     }//GEN-LAST:event_addbtnActionPerformed
  public void updateTable() {
         DefaultTableModel model = (DefaultTableModel) ingtable.getModel();
@@ -297,7 +269,7 @@ private Ingredientdao ingredientDao = new Ingredientdao();
         
         // Add ingredients to the table
         for (String category : ingredientDao.getCategorizedIngredients().keySet()) {
-            List<Ingredient> categoryIngredients = ingredientDao.getCategorizedIngredients().get(category);
+           List<Ingredient> categoryIngredients = ingredientDao.getCategorizedIngredients().get(category);
             for (Ingredient ingredient : categoryIngredients) {
                 model.addRow(new Object[]{ingredient.getId(), ingredient.getName(), 
                     ingredient.getExpiryDate(), ingredient.getCategory()});
@@ -465,6 +437,8 @@ public static void updateTable(JTable table, String name, String expiryDate, Str
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton updatebtn;

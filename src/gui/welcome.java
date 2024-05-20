@@ -28,43 +28,35 @@ public class welcome extends javax.swing.JFrame {
 
         admin = new javax.swing.JButton();
         customer = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        admin.setBackground(new java.awt.Color(255, 224, 177));
+        admin.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        admin.setForeground(new java.awt.Color(102, 51, 0));
         admin.setText("Admin Login");
         admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 adminActionPerformed(evt);
             }
         });
+        getContentPane().add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 420, -1, -1));
 
+        customer.setBackground(new java.awt.Color(255, 224, 177));
+        customer.setFont(new java.awt.Font("Corbel", 1, 16)); // NOI18N
+        customer.setForeground(new java.awt.Color(102, 51, 0));
         customer.setText("Customer Login");
         customer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 customerActionPerformed(evt);
             }
         });
+        getContentPane().add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(334, 334, 334)
-                .addComponent(admin)
-                .addGap(153, 153, 153)
-                .addComponent(customer)
-                .addContainerGap(665, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(admin)
-                    .addComponent(customer))
-                .addContainerGap(510, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/welcome.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 1370, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -119,5 +111,6 @@ public class welcome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton admin;
     private javax.swing.JButton customer;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

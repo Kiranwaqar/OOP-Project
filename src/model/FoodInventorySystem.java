@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
-import java.util.*;
-/**
- *
- * @author imkir
- */
+
+import java.util.ArrayList;
+import java.util.Calendar;
+//import java.util.Date;
+import java.util.List;
+
 public class FoodInventorySystem {
     private List<Ingredient> ingredients = new ArrayList<>();
 
@@ -25,14 +22,22 @@ public class FoodInventorySystem {
         ingredients.removeIf(ingredient -> ingredient.getName().equals(name));
     }
 
-    public void checkExpiration() {
-        Date today = new Date();
+   public void checkExpiration() {
+        Calendar today = Calendar.getInstance();
+        today.add(Calendar.DAY_OF_MONTH, 14); // Adding 14 days to today's date
+
         for (Ingredient ingredient : ingredients) {
-            if (ingredient.getExpiryDate().before(today)) {
-                System.out.println("Ingredient expired: " + ingredient.getName());
+            Calendar expiryDate = Calendar.getInstance();
+            expiryDate.setTime(ingredient.getExpiryDate());
+            
+            if (expiryDate.before(today)) {
+                System.out.println("Alert: Ingredient " + ingredient.getName()
+                        + " will expire in two weeks.");
             }
         }
     }
 
-
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

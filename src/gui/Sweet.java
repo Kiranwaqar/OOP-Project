@@ -4,7 +4,7 @@
  */
 package gui;
 import model.Ingredient;
-
+import model.Dish;
 import model.SweetIngredient;
 import model.UserInputHandler;
 /**
@@ -33,28 +33,42 @@ public class Sweet extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel1.setText("Are you allergic to anything in specific?");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 380, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 320, 450, -1));
 
-        jLabel2.setText("Do you dislike chocolate or cream?");
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel2.setText("Which of the following ingredient you dislike ?");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(673, 360, 370, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("jLabel3");
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 480, 460, -1));
 
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,44 +76,52 @@ public class Sweet extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 530, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(376, 376, 376)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(80, 80, 80)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField2))
-                .addContainerGap(780, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(29, 29, 29)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jButton1))
-                .addContainerGap(510, Short.MAX_VALUE))
-        );
+        jLabel4.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel4.setText("Eggs");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel5.setText("Vanilla Extract");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel6.setText("Strawberry");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 400, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel7.setText("Butter");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel8.setText("Skimmed Milk");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel9.setText("Cocoa Powder");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 440, -1, -1));
+
+        jButton2.setText("Next");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 560, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 580, 40));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sweet background.png"))); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1450, 820));
+
+        jButton3.setText("jButton3");
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -128,25 +150,34 @@ public class Sweet extends javax.swing.JFrame {
     // Process the user input (for example, display it in a label)
     jLabel2.setText("You entered: " + userInput);
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         placingorder placingOrderWindow = new placingorder();
+    // Display the placing order window
+    placingOrderWindow.setVisible(true);
+    // Close the current window
+    this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 public void handleUserInput(String allergenInput, String proteinInput) {
-    Ingredient[] chocolateCakeIngredients = SweetIngredient.chocolateCakeIngredients;
-    Ingredient[] fruitSaladIngredients = SweetIngredient.fruitSaladIngredients;
+     Ingredient[] operaCakeIngredients = SweetIngredient.getOperaCakeIngredients();
+    Ingredient[] pannaCottaIngredients = SweetIngredient.getPannaCottaIngredients();
 
     jLabel3.setText(""); // Clear the label text before updating
 
     boolean discardFirstDish = false;
     boolean discardSecondDish = false;
 
-    // Check the allergen input against the ingredients of the first dish (Chocolate Cake)
-    for (Ingredient ingredient : chocolateCakeIngredients) {
+    // Check the allergen input against the ingredients of the first dish (Opera Cake)
+    for (Ingredient ingredient : operaCakeIngredients) {
         if (allergenInput.equalsIgnoreCase(ingredient.getName())) {
             discardFirstDish = true;
             break;
         }
     }
 
-    // Check the allergen input against the ingredients of the second dish (Fruit Salad)
-    for (Ingredient ingredient : fruitSaladIngredients) {
+    // Check the allergen input against the ingredients of the second dish (Panna Cotta)
+    for (Ingredient ingredient : pannaCottaIngredients) {
         if (allergenInput.equalsIgnoreCase(ingredient.getName())) {
             discardSecondDish = true;
             break;
@@ -155,7 +186,7 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     // Check the protein input against the ingredients of the first dish if it's not already discarded
     if (!discardFirstDish) {
-        for (Ingredient ingredient : chocolateCakeIngredients) {
+        for (Ingredient ingredient : operaCakeIngredients) {
             if (proteinInput.equalsIgnoreCase(ingredient.getName())) {
                 discardFirstDish = true;
                 break;
@@ -165,7 +196,7 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     // Check the protein input against the ingredients of the second dish if it's not already discarded
     if (!discardSecondDish) {
-        for (Ingredient ingredient : fruitSaladIngredients) {
+        for (Ingredient ingredient :pannaCottaIngredients ) {
             if (proteinInput.equalsIgnoreCase(ingredient.getName())) {
                 discardSecondDish = true;
                 break;
@@ -175,18 +206,19 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     if (discardFirstDish && discardSecondDish) {
         // Both dishes are discarded
-        jLabel3.setText("Sorry, both dishes contain an allergen or don't match your preferred protein. No recommendation available.");
+        jLabel3.setText("Sorry, both dishes contain an allergen or don't match your preferred ingredient. No recommendation available.");
     } else if (discardFirstDish) {
         // First dish is discarded, recommend the second dish
-        jLabel3.setText("We recommend the dish: Fruit Salad");
+        jLabel3.setText("We recommend the dish: Panna Cotta");
     } else if (discardSecondDish) {
         // Second dish is discarded, recommend the first dish
-        jLabel3.setText("We recommend the dish: Chocolate Cake");
+        jLabel3.setText("We recommend the dish: OperaCake");
     } else {
         // Neither dish is discarded, recommend both dishes
-        jLabel3.setText("Both dishes are suitable: Chocolate Cake and Fruit Salad");
+        jLabel3.setText("Both dishes are suitable: Opera Cake and Panna Cotta");
     }
 }
+
 
     /**
      * @param args the command line arguments
@@ -225,9 +257,18 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

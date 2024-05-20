@@ -10,6 +10,7 @@ import access.Userdao;
 import javax.swing.Icon;
 import model.User;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -25,7 +26,10 @@ public class adminlogin extends javax.swing.JFrame {
     public adminlogin() {
         initComponents();
         btnlogin.setEnabled(false);
+       
+        
     }
+   
     public void clear(){
         txtPassword.setText("");
         btnlogin.setEnabled(false);
@@ -61,18 +65,20 @@ if(password.matches("123")&& !password.equals("")){
         btnClear = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1720, 800));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 0, 0));
         jLabel1.setText("Login");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, -1, -1));
 
         jLabel3.setText("Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 246, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 420, -1, -1));
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -82,7 +88,7 @@ if(password.matches("123")&& !password.equals("")){
                 txtPasswordKeyTyped(evt);
             }
         });
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 240, 296, -1));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 296, -1));
 
         btnlogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         btnlogin.setText("Login");
@@ -91,7 +97,7 @@ if(password.matches("123")&& !password.equals("")){
                 btnloginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
+        getContentPane().add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, -1, -1));
 
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear.png"))); // NOI18N
         btnClear.setText("Clear");
@@ -100,7 +106,7 @@ if(password.matches("123")&& !password.equals("")){
                 btnClearActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, -1, -1));
+        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 450, -1, -1));
 
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit small.png"))); // NOI18N
         btnExit.setText("Exit");
@@ -109,7 +115,7 @@ if(password.matches("123")&& !password.equals("")){
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 290, -1, -1));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, -1, -1));
 
         jButton4.setText("Forgot Password?");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -117,7 +123,12 @@ if(password.matches("123")&& !password.equals("")){
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 340, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background restaurant .png"))); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(1600, 800));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -40, 1720, 880));
+        jLabel2.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,10 +212,22 @@ if (password.equals("123")) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new adminlogin().setVisible(true);
-            }
+        try{
+         for (javax.swing.UIManager.LookAndFeelInfo info: javax.swing.UIManager.getInstalledLookAndFeels()){
+         if("Nimbus".equals(info.getName())){
+             javax.swing.UIManager.setLookAndFeel(info.getClassName());
+             break;
+         }
+         }
+        }
+       catch(ClassNotFoundException|InstantiationException|IllegalAccessException|javax.swing.UnsupportedLookAndFeelException ex){ 
+       java.util.logging.Logger.getLogger(adminlogin.class.getName()).log(java.util.logging.Level.SEVERE,null,ex);
+       }
+        java.awt.EventQueue.invokeLater(()->{
+            adminlogin login=new adminlogin();
+            login.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            login.setVisible(true);
+            
         });
     }
 
@@ -214,6 +237,7 @@ if (password.equals("123")) {
     private javax.swing.JButton btnlogin;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables

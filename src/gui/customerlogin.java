@@ -61,6 +61,7 @@ public class customerlogin extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -69,27 +70,27 @@ public class customerlogin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 0, 0));
         jLabel1.setText("Login");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 200, -1, -1));
 
         jLabel2.setText("Email");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 198, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
         jLabel3.setText("Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 246, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
         txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtEmailKeyReleased(evt);
             }
         });
-        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 192, 296, -1));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 296, -1));
 
         txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtPasswordKeyReleased(evt);
             }
         });
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 240, 296, -1));
+        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 296, -1));
 
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login.png"))); // NOI18N
         btnLogin.setText("Login");
@@ -98,7 +99,7 @@ public class customerlogin extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, -1, -1));
 
         btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clear.png"))); // NOI18N
         btnClear.setText("Clear");
@@ -107,7 +108,7 @@ public class customerlogin extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 290, -1, -1));
+        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 350, -1, -1));
 
         btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit small.png"))); // NOI18N
         btnExit.setText("Exit");
@@ -116,7 +117,7 @@ public class customerlogin extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 290, -1, -1));
+        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 350, -1, -1));
 
         jButton4.setText("Forgot Password?");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -124,7 +125,7 @@ public class customerlogin extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 340, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, -1, -1));
 
         jButton5.setText("Signup");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +133,11 @@ public class customerlogin extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background restaurant management system.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -4, 1360, 840));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -144,19 +149,19 @@ public class customerlogin extends javax.swing.JFrame {
         User user=null;
         user=Userdao.login(email,password);
         if(user==null){
-            JOptionPane.showMessageDialog(null,"<html><b style=\"color:red\">Incorrect Username or Password</b></html>","Message",JOptionPane.ERROR_MESSAGE);
-        }
+            JOptionPane.showMessageDialog(null,"<html><b style=\"color:red\">Incorrect "
+                    + "Username or Password</b></html>","Message",
+                    JOptionPane.ERROR_MESSAGE);  }
         else{
             if(user.getStatus().equals("false")){
                 ImageIcon icon=new ImageIcon("src/popupicons/wait.png");
-                JOptionPane.showMessageDialog(null,"<html><b>Wait for Admin Approval.</b></html>","Message",JOptionPane.INFORMATION_MESSAGE,icon);
+                JOptionPane.showMessageDialog(null,"<html><b>Wait for Admin Approval."
+                        + "</b></html>","Message",JOptionPane.INFORMATION_MESSAGE,icon);
                 clear();
             }
             if(user.getStatus().equals("true")){
                 setVisible(false);
-                new homecustomer(email).setVisible(true);
-            }
-        }
+                new homecustomer(email).setVisible(true);} }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -239,6 +244,7 @@ public class customerlogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables

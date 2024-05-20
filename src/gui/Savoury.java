@@ -4,6 +4,8 @@
  */
 package gui;
 import model.Ingredient;
+import model.Dish;
+import model.SavouryIngredient;
 
 import model.SavouryIngredient;
 import model.UserInputHandler;
@@ -35,24 +37,40 @@ public class Savoury extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel1.setText("Are you allergic to anything in specific?");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, 590, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 600, -1));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         jLabel2.setText("Are there any savoury ingredients you would refer not to have in your meal?");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, -1, -1));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 600, -1));
 
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -60,44 +78,46 @@ public class Savoury extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 530, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 282, -1, -1));
 
-        jLabel3.setText("jLabel3");
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel4.setText("avacado");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, -1, 14));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(357, 357, 357)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(136, 136, 136)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(603, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel3))
-                .addContainerGap(538, Short.MAX_VALUE))
-        );
+        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel5.setText("halloumi");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 360, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel6.setText("bell peppers");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, 110, -1));
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel7.setText("ground beef");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel8.setText("garlic");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel9.setText("tomatato sauce");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 410, -1, -1));
+
+        jButton2.setText("Next");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 570, -1, 30));
+
+        jLabel10.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, 680, 30));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/savoury background.png"))); // NOI18N
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1440, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,11 +149,20 @@ public class Savoury extends javax.swing.JFrame {
     // Process the user input (for example, display it in a label)
     jLabel2.setText("You entered: " + userInput);
     }//GEN-LAST:event_jTextField2ActionPerformed
-public void handleUserInput(String allergenInput, String proteinInput) {
-    Ingredient[] spaghettiBologneseIngredients = SavouryIngredient.spaghettiBologneseIngredients;
-    Ingredient[] vegetableStirFryIngredients = SavouryIngredient.vegetableStirFryIngredients;
 
-    jLabel3.setText(""); // Clear the label text before updating
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        placingorder placingOrderWindow = new placingorder();
+    // Display the placing order window
+    placingOrderWindow.setVisible(true);
+    // Close the current window
+    this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+public void handleUserInput(String allergenInput, String proteinInput) {
+     Ingredient[] spaghettiBologneseIngredients = SavouryIngredient.getSpaghettiBologneseIngredients();
+    Ingredient[] halloumiSaladIngredients = SavouryIngredient.getHalloumiSaladIngredients();
+    
+    jLabel10.setText(""); // Clear the label text before updating
 
     boolean discardFirstDish = false;
     boolean discardSecondDish = false;
@@ -147,7 +176,7 @@ public void handleUserInput(String allergenInput, String proteinInput) {
     }
 
     // Check the allergen input against the ingredients of the second dish (Vegetable Stir-Fry)
-    for (Ingredient ingredient : vegetableStirFryIngredients) {
+    for (Ingredient ingredient : halloumiSaladIngredients) {
         if (allergenInput.equalsIgnoreCase(ingredient.getName())) {
             discardSecondDish = true;
             break;
@@ -166,7 +195,7 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     // Check the protein input against the ingredients of the second dish if it's not already discarded
     if (!discardSecondDish) {
-        for (Ingredient ingredient : vegetableStirFryIngredients) {
+        for (Ingredient ingredient : halloumiSaladIngredients) {
             if (proteinInput.equalsIgnoreCase(ingredient.getName())) {
                 discardSecondDish = true;
                 break;
@@ -176,16 +205,16 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     if (discardFirstDish && discardSecondDish) {
         // Both dishes are discarded
-        jLabel3.setText("Sorry, both dishes contain an allergen or don't match your preferred protein. No recommendation available.");
+        jLabel10.setText("Sorry, both dishes contain an allergen or don't match your preferred ingredient. No recommendation available.");
     } else if (discardFirstDish) {
         // First dish is discarded, recommend the second dish
-        jLabel3.setText("We recommend the dish: Vegetable Stir-Fry");
+        jLabel10.setText("We recommend the dish: Halloumi Salad");
     } else if (discardSecondDish) {
         // Second dish is discarded, recommend the first dish
-        jLabel3.setText("We recommend the dish: Spaghetti Bolognese");
+        jLabel10.setText("We recommend the dish: Spaghetti Bolognese");
     } else {
         // Neither dish is discarded, recommend both dishes
-        jLabel3.setText("Both dishes are suitable: Spaghetti Bolognese and Vegetable Stir-Fry");
+        jLabel10.setText("Both dishes are suitable: Spaghetti Bolognese and Halloumi Salad");
     }
 }
 
@@ -226,9 +255,18 @@ public void handleUserInput(String allergenInput, String proteinInput) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables

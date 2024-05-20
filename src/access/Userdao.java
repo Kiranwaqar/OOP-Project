@@ -15,8 +15,8 @@ import java.sql.*;
  */
 public class Userdao {
     public static void save(User user){
-        String query="insert into user(name,email,mobileNumber,address,password,securityQuestion,answer,status) values('"+user.getName()+"','"+user.getEmail()+"','"+user.getMobileNumber()+"','"+user.getAddress()+"','"+user.getPassword()+"','"+user.getSecurityQuestion()+"','"+user.getAnswer()+"','false')";
-        dbOperations.setDataOrDelete(query,"Registered successfully! Wait for admin approval");
+        String query="insert into user(name,email,mobileNumber,address,password,securityQuestion,answer,status) values('"+user.getName()+"','"+user.getEmail()+"','"+user.getMobileNumber()+"','"+user.getAddress()+"','"+user.getPassword()+"','"+user.getSecurityQuestion()+"','"+user.getAnswer()+"','true')";
+        dbOperations.setDataOrDelete(query,"Registered successfully!");
     }
     public static User login(String email,String password){
         User user=null;
